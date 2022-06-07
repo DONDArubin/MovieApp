@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scr/styles/index.css">
+    <title>Movie App</title>
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header__inner" id="header">
+
+                <div class="header__logo">
+                    <a class="nav__link" href="index.html" id="index"><h1>Movie App</h1></a>
+                </div>
+
+                <div class="header__nav"> 
+                    <a class="nav__link" href="#filter__window"><h1>Filter & Sort</h1></a>
+                    <a class="nav__link" href="#addmovie__window"><h1>Add Movie</h1></a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="addmoviee__window" id="addmovie__window">
+        <a href="#index" class="window__close">X</a>
+        <div class="container">
+            <div class="form__titlee">
+                <h1>Add Movie Form</h1>
+            </div>
+            <form action="#" method="get" id="form" name="addmovie__form" class="addmovie__form">
+                <div class="field">
+                    <label class="field__label" for="title">Title:</label>
+                    <input class="field__input" type="text" name="title" pattern="^(?! )(?!.* $)[А-Яа-яЁёa-zA-Z+\s+\d]+$" required>
+                </div>
+                <div class="field">
+                    <label class="field__label" for="country">Country:</label>
+                    <input class="field__input" type="text" name="country" pattern="^(?! )(?!.* $)[А-Яа-яЁёa-zA-Z+\s+\-',]+$" required>
+                </div>
+                <div class="field">
+                    <label class="field__label" for="genre">Genre:</label>
+                    <div class="form_genre">
+                        <p class="form_genre_checkbox">Cartoon <input type="checkbox" name="cartoon" value="cartoon"></p>
+                        <p class="form_genre_checkbox">Comedy <input type="checkbox" name="comedy" value="comedy"></p>
+                        <p class="form_genre_checkbox">Horror <input type="checkbox" name="horror" value="horror"></p>
+                        <p class="form_genre_checkbox">Thriller <input type="checkbox" name="thriller" value="thriller"></p>
+                        <p class="form_genre_checkbox">Detective <input type="checkbox" name="detective" value="detective"></p>
+                        <p class="form_genre_checkbox">Drama <input type="checkbox" name="drama" value="drama"></p>
+                        <p class="form_genre_checkbox">Historical <input type="checkbox" name="history" value="history"></p>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="field__label" for="Raiting">Raiting:</label>
+                    <select class="field__input" name="raiting" >
+                        <option value="0+">0+</option>
+                        <option value="6+">6+</option>
+                        <option value="12+">12+</option>
+                        <option value="16+">16+</option>
+                        <option value="18+">18+</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label class="field__label" for="releasedate">Release Date:</label>
+                    <input class="field__input" type="date" name="releaseDate" pattern="^[0-9]{4}-[0-9]{2}-[0-9]{2}$" required>
+                </div>
+                <div class="field">
+                    <label class="field__label" for="poster">Poster:</label>
+                    <input class="field__input" placeholder="https://example.com" type="url" name="poster">
+                </div>
+                <div class="field__submit">
+                    <button class="form__btn__submit" type="submit">Add Movie</button>
+                    <button class="form__btn__submit" type="reset">Reset form</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="review__window" id="review__window">
+        <a href="#index" class="window__close">X</a>
+        <div class="container">
+
+            <div class="review__title">
+                <h1>Reviews:</h1>
+            </div>
+
+            <div class="reviews">
+            </div>
+
+            <form action="#" method="get" id="review__form" name="review__form" class="review__form">
+                <div class="field">
+                    <label class="field__label" for="review">Your review:</label>
+                    <input class="field__input" type="text" name="review" id="review" required>
+                </div>
+                <div class="field__submit">
+                    <button class="form__btn__submit" type="submit">Add Review</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    
+    <div class="main__section">
+        <div class="container">
+            <div class="movies">
+                
+                <div class="card" data-id="-1">
+                    <div class="card__poster">
+                        <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/7ade06a8-4178-4386-9ee2-87fec5a172eb/300x450" class="movie__poster">
+                    </div>
+                    <div class="Movie__info">
+                        <h3 class="movie__title">Шрек</h3>
+                        <p class="moovie__info">Genre: Comedy, Cartoon</p> 
+                        <p class="moovie__info">Country: U.S., Japan</p>
+                        <p class="moovie__info">12+</p>
+                        <p class="moovie__info">Release Date: 2002-04-22</p>   
+                    </div>
+                    <button class="del__movie__btn">Delete</button>
+                    <!-- <button class="review__movie__btn" href="#review__window">Reviews</button> -->
+                    <button class="review__movie__btn"><a class="link__review" href="#review__window">Reviews</a></button>
+                </div>
+            
+                <div class="card" data-id="0">
+                    <div class="card__poster">
+                        <img src="https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/27a3c989-e883-40f3-806f-f3ef27fe7177/300x450" class="movie__poster">
+                    </div>
+                    <div class="Movie__info">
+                        <h3 class="movie__title">Шрек 2</h3>
+                        <p class="moovie__info">Genre: Comedy, Cartoon</p> 
+                        <p class="moovie__info">Country: U.S.</p>
+                        <p class="moovie__info">6+</p>
+                        <p class="moovie__info">Release Date: 2004-05-14</p>   
+                    </div>
+                    <button class="del__movie__btn">Delete</button>
+                    <!-- <button class="review__movie__btn" href="#review__window">Reviews</button> -->
+                    <button class="review__movie__btn"><a class="link__review" href="#review__window">Reviews</a></button>
+                </div>
+
+                    
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script type="module" src="./scr/scripts/index.js"></script>
+</body>
+</html>
